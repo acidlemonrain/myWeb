@@ -1,0 +1,9 @@
+.board{
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.canvas{
+    height: 40vh;
+    width: 100%;
+}
