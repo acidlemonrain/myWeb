@@ -1,8 +1,15 @@
 import { canvasEnhanced, getColorByTime } from "../../utils";
+import { DisappearedLoading } from 'react-loadingg';
 import  { throttle } from 'underscore';
 import jQuery from "jquery";
 import bgImg from '../../image/12.jpg'
 import './index.css'
+let img = new Image()
+img.onload = ()=>{
+     // remove mask
+     jQuery('#spinner')[0].style.display = 'none'
+}
+img.src = bgImg
 const boardStyle = {
     height: '35vh',
     width: '100%',
@@ -80,33 +87,14 @@ function drawCavas() {
         cacheSpeed = mouseSpeed
         requestAnimationFrame(go)
     }
-
-    // text over top centered at Math.PI * 1.5 ( 270 deg)
-    // ctx.fillCircleText(text, centX, centY, rad, Math.PI * 1.5);
-
-    // text under top centered at Math.PI * 1.5 ( 270 deg)
-    // ctx.textBaseline = "top";
-    // ctx.fillCircleText(text, centX, centY, rad, Math.PI * 1.5);
-
-
-    // text over top centered at Math.PI * 1.5 ( 270 deg)
-    // ctx.textBaseline = "middle";
-    // ctx.fillCircleText(text, centX, centY, rad, Math.PI * 1.5);
-
-
-
-    // Use measure text to draw a arc around the text
-    // ctx.textBaseline = "middle";
-    // var width = ctx.measureCircleText(text, rad).angularWidth;
-    // ctx.fillCircleText(text, centX, centY, rad, Math.PI * 1.5);
-
-
 }
 
 function Index() {
     return (
         <div>
-            <div id='border' className={"board"} style={{ ...boardStyle }}></div>
+            <div id='border' className={"board"} style={{ ...boardStyle }}>
+                <div id="spinner"> <DisappearedLoading></DisappearedLoading> </div>
+            </div>
 
             <canvas id="canvas" width="2000" height="400" className={"canvas"}></canvas>
 

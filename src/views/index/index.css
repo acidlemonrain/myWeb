@@ -2,8 +2,17 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    position: relative;
 }
 .canvas{
     height: 40vh;
     width: 100%;
+}
+#spinner{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: aliceblue;
 }
