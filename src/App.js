@@ -11,6 +11,7 @@ import {
   Link,
   useLocation
 } from "react-router-dom";
+import About from './views/about';
  
 function App() {
  
@@ -22,7 +23,8 @@ function App() {
           {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
           <Switch>
-            <Route path="/about">
+            <Route path="/history">
+              <About></About>
             </Route>
             <Route path="/blog">
                <Blog    ></Blog>

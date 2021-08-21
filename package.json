@@ -17,6 +17,7 @@
     "underscore": "^1.13.1",
     "web-vitals": "^1.0.1"
   },
+  "proxy": "http://localhost",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
