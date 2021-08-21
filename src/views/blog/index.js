@@ -13,7 +13,7 @@ function Blog() {
     const [md,setMd] = useState('')
     useEffect(()=>{
         let id = searchKey(location.search)
-        axios.get('http://localhost/blog?id='+id).then(res=>{
+        axios.get('/blog?id='+id).then(res=>{
             setMd(res.data)
         })
     },[])

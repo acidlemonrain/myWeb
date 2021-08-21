@@ -10,7 +10,7 @@ const container = {
 function Blogs() {
     const [blogs,setBlogs] = useState([])
      useEffect(()=>{
-        axios.get('http://localhost/blogs').then(res=>{
+        axios.get('/blogs').then(res=>{
             const {data} = res 
             const transfer  = data.map(item=>{
                 return {title:item,description:item}
